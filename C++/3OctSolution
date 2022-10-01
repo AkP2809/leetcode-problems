@@ -1,0 +1,11 @@
+int reverse(int i) {
+        int reverse = 0;
+        while (i != 0) {
+            int pop = i % 10;
+            i /= 10;
+            if (reverse > INT_MAX/10 || (reverse == INT_MAX / 10 && pop > 7)) return 0;
+            if (reverse < INT_MIN/10 || (reverse == INT_MIN / 10 && pop < -8)) return 0;
+            reverse = reverse * 10 + pop;
+        }
+        return reverse;
+    }
